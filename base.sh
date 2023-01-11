@@ -42,7 +42,7 @@ pacman -S --noconfirm grub efibootmgr os-prober \
                       alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol \
                       mtools dosfstools xdg-utils xdg-user-dirs bat lsd ranger stow ueberzug xclip binutils glu fzf \
                       gvfs nfs-utils ntfs-3g udiskie \
-                      acpi acpi_call acpid lm-sensors \
+                      acpi acpi_call acpid \
                       jre-openjdk jdk-openjdk \
                       flatpak \
                       archlinux-keyring \
@@ -51,16 +51,8 @@ pacman -S --noconfirm grub efibootmgr os-prober \
                       # xf86-video-amdgpu
                       asusctl
 
-yay -S --noconfirm timeshift-autosnap timeshift-bin zramd \
-       downgrade
-
-# install fonts
-pacman -S --noconfirm noto-fonts noto-fonts-emoji noto-fonts-cjk 
-yay -S --noconfirm nerd-fonts-jetbrains-mono ttf-google-sans ttf-symbola
-                      
-
 # set up dual boot
-$WINPART=
+WINPART=
 mkdir /mnt/winboot
 mount /dev/$WINPART /mnt/winboot
 
