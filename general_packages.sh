@@ -1,7 +1,14 @@
 #!/bin/bash
 
-# post install
-yay -S --noconfirm timeshift-autosnap timeshift-bin zramd downgrade
+# install yay
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -si --noconfirm
+cd ..
+rm -rf yay-bin
+
+# timsehift and snapshots
+yay -S --noconfirm timeshift-autosnap timeshift-bin zramd
 
 # install fonts
 pacman -S --noconfirm noto-fonts noto-fonts-emoji noto-fonts-cjk 
@@ -26,9 +33,8 @@ pacman -S --noconfirm kitty
 pacman -S --noconfirm zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k
 # then run chsh
 
-# web brosers
+# web browser
 pacman -S --noconfirm firefox
-yay -S --noconfirm google-chrome
 
 # PDF viewer
 pacman -S --noconfirm okular zathura zathura-pdf-poppler
@@ -40,13 +46,13 @@ pacman -S --noconfirm bitwarden pcmanfm qbittorrent qt5ct ranger tk viewnior xar
 ### AUR PACKAGES ######################################################################################################
 
 # misc yay packages
-yay -S --noconfirm notion-app nvim-packer-git qt5-styleplugins tor-browser touchegg visual-studio-code-bin
+yay -S --noconfirm notion-app nvim-packer-git qt5-styleplugins tor-browser touchegg visual-studio-code-bin google-chrome downgrade
 
 # bioeng packages
+pacman -S --noconfirm python-virtualenv
 yay -S 3dslicer-bin
 
 ### FLATPAK ###########################################################################################################
-
 flatpak -y discord spotify signal whatsapp zotero whatsappforlinux
 
 ### WM/DESKTOP ########################################################################################################
