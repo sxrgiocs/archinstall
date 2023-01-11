@@ -62,7 +62,7 @@ systemctl enable avahi-daemon
 systemctl enable reflector.timer
 systemctl enable fstrim.timer
 systemctl enable acpid
-systemctl enable --now power-profiles-daemon.service # only for asus
+systemctl enable power-profiles-daemon.service # only for asus
 
 # users and password
 USER="sergio"
