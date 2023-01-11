@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# post install
+yay -S --noconfirm timeshift-autosnap timeshift-bin zramd downgrade
+
+# install fonts
+pacman -S --noconfirm noto-fonts noto-fonts-emoji noto-fonts-cjk 
+yay -S --noconfirm nerd-fonts-jetbrains-mono ttf-google-sans ttf-symbola
+
+# systemd
+systemctl --user enable asus-notify.service # only for asus
+systemctl enable zramd.service
 
 ### GENERAL PACKAGES ##################################################################################################
 
