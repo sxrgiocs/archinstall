@@ -66,7 +66,7 @@ systemctl enable --now power-profiles-daemon.service # only for asus
 
 # users and password
 USER="sergio"
-PASSWD="pergamino"
+PASSWD=
 echo root:$PASSWD | chpasswd
 useradd -m $USER
 echo $USER:PASSWD | chpasswd
