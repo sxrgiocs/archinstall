@@ -24,7 +24,7 @@ yay -S --noconfirm google-chrome
 pacman -S --noconfirm okular zathura zathura-pdf-poppler
 
 # misc
-pacman -S --noconfirm bitwarden pcmanfm qbittorrent qt5ct ranger tk viewnior xarchiver
+pacman -S --noconfirm bitwarden pcmanfm qbittorrent qt5ct ranger tk viewnior xarchiver obs-studio
 
 
 ### AUR PACKAGES ######################################################################################################
