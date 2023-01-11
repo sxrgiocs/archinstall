@@ -21,13 +21,6 @@ echo "127.0.1.1 $HOSTNAME.localdomain $HOSTNAME"
 pacman -S --noconfirm reflector rsync
 reflector --verbose -c Germany -c France -c Spain --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
-# install yay
-git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin
-makepkg -si --noconfirm
-cd ..
-rm -rf yay-bin
-
 # setup asus repository (only for ROG laptops)
 echo "[g14]" >> /etc/pacman.conf
 echo "SigLevel = DatabaseNever Optional TrustAll" >> /etc/pacman.conf
@@ -48,7 +41,6 @@ pacman -S --noconfirm grub efibootmgr os-prober \
                       archlinux-keyring \
                       gzip p7zip unrar zip \
                       nvidia nvidia-prime nvidia-utils nvidia-settings \
-                      # xf86-video-amdgpu
                       asusctl
 
 # set up dual boot
@@ -71,7 +63,6 @@ systemctl enable reflector.timer
 systemctl enable fstrim.timer
 systemctl enable acpid
 systemctl enable --now power-profiles-daemon.service # only for asus
-
 
 # users and password
 USER="sergio"
