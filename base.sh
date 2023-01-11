@@ -42,7 +42,7 @@ pacman -S --noconfirm grub efibootmgr os-prober \
                       alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol \
                       mtools dosfstools xdg-utils xdg-user-dirs bat lsd ranger stow ueberzug xclip binutils glu fzf \
                       gvfs nfs-utils ntfs-3g udiskie \
-                      acpi acpi_call acpid \
+                      acpi acpi_call acpid lm_sensors \
                       jre-openjdk jdk-openjdk \
                       flatpak \
                       archlinux-keyring \
@@ -70,9 +70,8 @@ systemctl enable avahi-daemon
 systemctl enable reflector.timer
 systemctl enable fstrim.timer
 systemctl enable acpid
-systemctl enable zramd.service
 systemctl enable --now power-profiles-daemon.service # only for asus
-systemctl --user enable asus-notify.service # only for asus
+
 
 # users and password
 USER="sergio"
