@@ -58,11 +58,17 @@ flatpak -y discord spotify signal whatsapp zotero whatsappforlinux
 ### WM/DESKTOP ########################################################################################################
 
 # GNOME
-pacman -S --noconfirm gnome-shell gnome-tweaks gnome-control-center
+pacman -S --noconfirm gnome-shell gnome-tweaks gnome-control-center gnome-calendar
 yay -S --noconfirm extension-manager
 yay -S --noconfirm gnome-shell-extension-alphabetical-grid-extension gnome-shell-extension-appindicator \
                    gnome-shell-extension-bluetooth-quick-connect gnome-shell-extension-blur-my-shell \
                    gnome-shell-extension-clipboard-history gnome-shell-extension-gsconnect \
                    gnome-shell-extension-hide-universal-access gnome-shell-extension-quick-settings-tweaks-git \
                    gnome-shell-extension-vitals gnome-shell-extension-wintile
+                   
+# AWESOME WM
+yay -S picom-git wezterm rofi acpi acpid acpi_call upower lxappearance-gtk3 \
+jq inotify-tools polkit-gnome xdotool xclip gpick ffmpeg blueman redshift \
+brightnessctl feh scrot \
+mpv mpd mpc mpdris2 python-mutagen ncmpcpp playerctl --needed
 
